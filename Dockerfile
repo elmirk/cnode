@@ -44,6 +44,8 @@ RUN set -xe \
 
 FROM ubuntu:18.04 as prod
 
+ENV CONTAINER=cnode
+COPY .bashrc /root/
 COPY --from=dev /usr/local/lib/erlang /usr/local/lib/erlang
 COPY --from=dev /etc/ld.so.conf /etc/ld.so.conf
 COPY --from=dev /opt/DSI/64 /opt/DSI/64
