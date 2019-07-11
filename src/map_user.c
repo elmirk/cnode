@@ -415,6 +415,11 @@ int mapu_erl_send(MSG *m)
 	  break;
 
         case MAPDT_U_ABORT_IND:
+          /*
+            will send message like
+            {mapdt_uabort_ind,33858,<<8,8,1,5,1,13,19,66,55,8,0,17,4,151,5,102,21,32,9,3,13,19,60,55,8,0,17,4,151,5,102,21,16,0,0>>}
+            to enode_broker process
+          */
           erl_tuple_obj[0] = erl_mk_atom("mapdt_uabort_ind");
 	  break;
 
